@@ -16,7 +16,7 @@ import { z } from "zod";
  *   - Error information if the request fails.
  */
 const server = new McpServer({
-  name: "alma-curl-server",
+  name: "mcp-alma-api",
   version: "1.0.0",
   capabilities: { tools: {} },
 });
@@ -67,7 +67,7 @@ server.tool(
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("alma-curl-server running on stdio");
+  console.error("mcp-alma-api running on stdio");
 }
 
 main().catch((error) => {

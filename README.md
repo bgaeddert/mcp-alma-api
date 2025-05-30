@@ -1,3 +1,22 @@
+## MCP Inspector (Local Debugging)
+You can use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to debug and inspect your MCP server locally.
+
+### Usage
+1. Install (already in `optionalDependencies`):
+   ```powershell
+   npm install
+   ```
+2. Start your server with the inspector:
+   ```powershell
+   npx mcp-inspector -- npx mcp-alma-api
+   ```
+   Or for local dev:
+   ```powershell
+   npx mcp-inspector -- npx .
+   ```
+3. Open the inspector UI (URL will be shown in your terminal).
+
+This allows you to see tool calls, inspect inputs/outputs, and debug issues interactively.
 # MCP Alma API Server
 
 This project is an MCP (Model Context Protocol) server implemented in TypeScript, designed to be run as an npx-executable CLI. It exposes a tool called `curl` that allows AI or users to perform HTTP requests (GET, POST, PATCH, DELETE) with custom headers and payloads.
@@ -53,7 +72,7 @@ Add this to your Claude MCP config (e.g. `claude_desktop_config.json`):
 ```json
 {
   "mcpServers": {
-    "alma-curl-server": {
+    "mcp-alma-api": {
       "command": "npx",
       "args": ["mcp-alma-api"]
     }

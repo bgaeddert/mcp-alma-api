@@ -26,7 +26,7 @@ const zod_1 = require("zod");
  *   - Error information if the request fails.
  */
 const server = new mcp_js_1.McpServer({
-    name: "alma-curl-server",
+    name: "mcp-alma-api",
     version: "1.0.0",
     capabilities: { tools: {} },
 });
@@ -74,7 +74,7 @@ function main() {
     return __awaiter(this, void 0, void 0, function* () {
         const transport = new stdio_js_1.StdioServerTransport();
         yield server.connect(transport);
-        console.error("alma-curl-server running on stdio");
+        console.error("mcp-alma-api running on stdio");
     });
 }
 main().catch((error) => {
