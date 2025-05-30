@@ -36,6 +36,7 @@ npx .
    node build/index.js
    ```
 
+
 ## curl Tool API
 - **Input:**
   - `url` (string): The endpoint to call.
@@ -45,6 +46,20 @@ npx .
 - **Output:**
   - The HTTP response body (JSON or text).
   - Error information if the request fails.
+
+### Claude for Desktop MCP Server Settings Example
+Add this to your Claude MCP config (e.g. `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "alma-curl-server": {
+      "command": "npx",
+      "args": ["mcp-alma-api"]
+    }
+  }
+}
+```
 
 ## Development
 - Source code is in `src/index.ts`.
